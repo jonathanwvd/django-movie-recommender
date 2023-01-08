@@ -1,0 +1,44 @@
+{% extends "partials/master.html" %}
+
+{% block title %}
+{{ movie_info.original_title }}
+{% endblock %}
+
+
+{% block content %}
+
+<div style="background-image: url('https://image.tmdb.org/t/p/original{{ movie_info.backdrop_path }}'); height: 500px;">
+
+  <div class="layer">
+    <div class="row">
+      <div class="col-md-6 p-3 p-md-5 text-white rounded bg-dark ">
+
+          <h2>You Selected: {{ movie_info.original_title }} </h2>
+          <strong class="d-inline-block mb-2 text-primary">{{ movie_info.vote_average }} | {{ movie_info.release_date|truncatechars:5 }}</strong>
+
+          <p class="card-text"> {{ movie_info.overview }} </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<section>
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap">
+    <div class="row">
+      <h2 style="color:white">We suggest these movies for you</h2>
+    </div>
+
+    <div class="row">
+
+      {% for similar in similar_movies %}
+        {% include "partials/movie_card.html" with movie=similar %}
+
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
