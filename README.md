@@ -1,6 +1,6 @@
-# Django Movie Recommendation
+# Django Movie Recommender
 
-This simple Django application suggests new movies based on a selected one.
+This simple Django application recommends new movies based on a selected one.
 
 The application uses the [The Movie DB API](https://developers.themoviedb.org/3) to get information about movies as well as covers and images.
 
