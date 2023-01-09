@@ -1,1 +1,1 @@
-web: gunicorn --chdir FromThePath FromThePath.wsgi
+web: gunicorn --chdir django_movie_recommender django_movie_recommender.wsgi
