@@ -4,12 +4,23 @@ This simple Django application suggests new movies based on a selected one.
 
 The application uses the [The Movie DB API](https://developers.themoviedb.org/3) to get information about movies as well as covers and images.
 
-"The Movie DB" recommendations are used, although some recommendation algorithm could be easily integrated into this application.
+"The Movie DB" recommendations are used, although a recommendation algorithm can be easily integrated into this application.
 
 This [Netflix-based bootstrap template](https://w3hubs.com/netflix-home-page-in-bootstrap-5/) was used.
 
 
-Demo: (coming soon)
+Demo: https://my-next-movie.herokuapp.com/
+
+## Screenshot
+### Home page
+![home](screenshots/home.png?raw=true)
+
+### Recommendation page
+![home](screenshots/details.png?raw=true)
+
+![home](screenshots/details2.png?raw=true)
+
+
 
 ## Get a TMDB API Key
 You will need a TMDB API Key to allow the application to request TMDB data. To do this, follow [these steps](https://developers.themoviedb.org/3/getting-started/introduction).
