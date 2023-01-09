@@ -1,3 +1,4 @@
+
 :root {
    --bs-red: #e50914;
 }
@@ -59,6 +60,7 @@ a.navbar-brand {
 .bg-img {
    background-image: url(/static/images/bg.jpg);
    height: 700px;
+   background-size: 100%;
 }
 
 .details-img {
@@ -90,6 +92,19 @@ a.navbar-brand {
    cursor: pointer;
 }
 
+.btn-primary {
+   background-color: #e50914;
+   border: 0px; 
+}
+
+
+.card-button {
+   background-color: #e50914;
+   color: #fff;
+   border: 0px;
+   cursor: pointer;
+}
+
 .btn-check:focus+.btn,
 .btn:focus {
    box-shadow: none;
@@ -115,11 +130,10 @@ a.navbar-brand {
    margin-bottom: 10px;
 }
 
-.faq .card {
+.card {
    background-color: #303030;
-   font-size: 26px;
    color: #fff;
-   padding-left: 30px;
+   margin: 10px
 }
 
 footer {
@@ -160,6 +174,10 @@ footer a:hover {
    }
 }
 
+.layer h2 {
+   font-size: 40px;
+}
+
 @media(max-width: 768px) {
    .reverse {
       flex-direction: column-reverse;
@@ -174,7 +192,7 @@ footer a:hover {
       font-size: 20px;
    }
    section h2 {
-      font-size: 40px;
+      font-size: 25px;
    }
    .main-search input,
    .input-group-text {
@@ -204,6 +222,10 @@ footer a:hover {
    .layer h1 {
       font-size: 40px;
    }
+   .layer h2 {
+      font-size: 30px;
+   }
+
    .layer h5 {
       font-size: 16px;
    }
@@ -235,5 +257,8 @@ footer a:hover {
 @media(max-width:425px) {
    .layer h1 {
       font-size: 34px;
+   }
+   .layer h2 {
+      font-size: 20px;
    }
 }

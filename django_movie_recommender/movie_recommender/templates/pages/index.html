@@ -1,60 +1,7 @@
-{% extends "partials/master.html" %}
-
-{% block title %}
-  My next movie - Home
-{% endblock %}
+{% extends "partials/base_index.html" %}
 
 
-{% block content %}
-<div class="bg-img">
-  <div class="layer">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>What movie would you like to be <br>watching for the first time today?</h1>
-      </div>
-    </div>
-    <div class="row w-100">
-      <div class="col-md-2 col-1"></div>
-      <div class="col-md-8 col-10 p-0 main-search">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Movie name (e.g.: Fight Club)">
-          <span class="input-group-text" id="basic-addon2">Give me Recommendations!
-            <i class="bi bi-chevron-right text-white"></i></span>
-        </div>
-
-        <!--
-        <div class="input-group mb-3">
-        <form action="/get_id_from-name/" method="post">
-          <input id="movie_name" class="form-control" type="text" name="your_name" value="{{ current_name }}">
-          <input class="input-group-text" id="basic-addon2" type="submit" value="Give me similar!">
-        </form>
-
-        </div>
-      -->
-
-      </div>
-      <div class="col-md-2 col-1"></div>
-    </div>
-  </div>
-</div>
-
-
-<section>
-  <div style="display: flex; flex-direction: row; flex-wrap: wrap">
-    <div class="row">
-      <h2 style="color:white">Or start with the top rated</h2>
-    </div>
-
-    <div class="row">
-
-      {% for movie in top_rated %}
-        {% include "partials/movie_card.html" with movie=movie %}
-
-      {% endfor %}
-    </div>
-
-  </div>
-</section>
-
-
+{% block search_title %}
+  <h1>What movie would you like to be</h1>
+  <h2>watching for the first time today?</h2>
 {% endblock %}

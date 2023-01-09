@@ -1,44 +1,59 @@
 {% extends "partials/master.html" %}
 
 {% block title %}
-{{ movie_info.original_title }}
+{{ movie_selected.original_title }}
 {% endblock %}
 
 
 {% block content %}
 
-<div style="background-image: url('https://image.tmdb.org/t/p/original{{ movie_info.backdrop_path }}'); height: 500px;">
-
+<div style="background-image: url('https://image.tmdb.org/t/p/original{{ movie_selected.backdrop_path }}'); height: 500px; background-size: 100%;">
   <div class="layer">
     <div class="row">
-      <div class="col-md-6 p-3 p-md-5 text-white rounded bg-dark ">
-
-          <h2>You Selected: {{ movie_info.original_title }} </h2>
-          <strong class="d-inline-block mb-2 text-primary">{{ movie_info.vote_average }} | {{ movie_info.release_date|truncatechars:5 }}</strong>
-
-          <p class="card-text"> {{ movie_info.overview }} </p>
+      <div class="col-md-6 p-3 p-md-5 text-white rounded bg-dark">
+          <h3>You Selected: </h3>
+          <h2>{{ movie_selected.original_title }} ({{ movie_selected.release_date|slice:":4" }}) </h2>
+          <p class="card-text"> {{ movie_selected.overview }} </p>
       </div>
-
     </div>
   </div>
 </div>
 
-
 <section>
-  <div style="display: flex; flex-direction: row; flex-wrap: wrap">
-    <div class="row">
-      <h2 style="color:white">We suggest these movies for you</h2>
-    </div>
+  <div >
+    {% if similar_movies|length > 0 %}
+      <div class="row">
+          <h2 style="color:white">We recommend these movies for you:</h2>
+      </div>
 
-    <div class="row">
+      <div class="row">
+        {% for similar in similar_movies %}
+          {% include "partials/movie_card.html" with movie=similar %}
+        {% endfor %}
+      </div>
 
-      {% for similar in similar_movies %}
-        {% include "partials/movie_card.html" with movie=similar %}
+      {% else %}
+      <div class="row">
+        <h2 style="color:white">No more recommendations.</h2>
+        <h3 style="color:white">Continue from a top rated movie or go back to the home page.</h3>
+      </div>
 
-      {% endfor %}
-    </div>
+      <div class="row">
+        {% for similar in top_rated %}
+          {% include "partials/movie_card.html" with movie=similar %}
+        {% endfor %}
+      </div>
+
+    {% endif %}
 
   </div>
+
+  <div class="row">
+    <a href="/movies/{{ movie_selected.id }}/{{ next_page }}" class="btn btn-primary">
+      <h3>More</h3>
+    </a>
+  </div>
+
 </section>
 
 {% endblock %}

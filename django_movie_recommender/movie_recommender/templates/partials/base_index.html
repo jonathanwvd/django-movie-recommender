@@ -1,0 +1,46 @@
+{% extends "partials/master.html" %}
+
+{% block title %}
+  My next movie - Home
+{% endblock %}
+
+
+{% block content %}
+<div class="bg-img">
+  <div class="layer">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {% block search_title %}
+        {% endblock %}
+
+        <form  method=POST action="{% url 'movie_search' %}" class="input-group">
+          {% csrf_token %}
+          <input class="form-control" type="search" arial-label="Search" placeholder="Movie name (e.g.: Fight Club)"
+          name="searched">
+          <button class="btn btn-primary " type="submit">Give me Recommendations!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section>
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap">
+    <div class="row">
+      <h2 style="color:white">Or start with the top rated</h2>
+    </div>
+
+    <div class="row">
+
+      {% for movie in top_rated %}
+        {% include "partials/movie_card.html" with movie=movie %}
+
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{% endblock %}

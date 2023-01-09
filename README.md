@@ -9,7 +9,7 @@ The application uses the [The Movie DB API](https://developers.themoviedb.org/3)
 This [Netflix-based bootstrap template](https://w3hubs.com/netflix-home-page-in-bootstrap-5/) was used.
 
 
-Demo: https://my-next-movie.herokuapp.com/
+Demo: (coming soon)
 
 ## Get a TMDB API Key
 You will need a TMDB API Key to allow the application to request TMDB data. To do this, follow [these steps](https://developers.themoviedb.org/3/getting-started/introduction).
