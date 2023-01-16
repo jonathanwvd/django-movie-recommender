@@ -9,8 +9,6 @@ The application uses the [The Movie DB API](https://developers.themoviedb.org/3)
 This [Netflix-based bootstrap template](https://w3hubs.com/netflix-home-page-in-bootstrap-5/) was used.
 
 
-Demo: https://my-next-movie.herokuapp.com/
-
 ## Screenshot
 ### Home page
 ![home](screenshots/home.png?raw=true)
